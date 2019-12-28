@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2020,我想和你在一起</title>
+
+</head>
+<style>
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    width:100%;
+    height:100%;
+    background-image: url(http://ww1.sinaimg.cn/large/006nB4gFly1gact9kdk2aj31o01hcgqo.jpg);
+    background-size: cover;
+    /* background:linear-gradient(pink 0%,black 100%); */
+   
+}
+.rib{
+    position:absolute;
+    bottom:-140px;
+    right: -110px;
+    width:400px;
+    height:460px;
+    border:solid pink;
+    border-width:1px 1px 0 0;
+    border-radius:100% 100% 0/70% 100% 0;
+    transition: all 1s;
+}
+#react{
+    width: 200px;
+    height:200px;
+    margin: 400px auto;
+    transform-style:preserve-3d;
+    animation:rotate 20s infinite;
+    animation-timing-function: linear;
+}
+#react div{
+    position:absolute;
+    transition: all .4s;
+}
+div .out_pic{
+    width:200px;
+    height:200px;
+    opacity:0.9;
+}
+div .in_pic{
+    width:100px;
+    height:100px;
+}
+#react span{
+    display:block;
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:50px;
+    left:50px;
+}
+@keyframes rotate{
+    from{transform: rotateX(0deg) rotateY(0deg);}
+    to{transform: rotateX(360deg) rotateY(360deg);}
+}
+.out_frount{
+    transform:translateZ(100px);
+}
+.out_back{
+    transform:translateZ(-100px);
+}
+.out_left{
+    transform:rotateY(90deg) translateZ(100px);
+}
+.out_right{
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.out_top{
+    transform:rotateX(90deg) translateZ(100px);
+}
+.out_bottom{
+    transform: rotateX(-90deg) translateZ(100px);
+}
+.in_frount{
+    transform:translateZ(50px);
+}
+.in_back{
+    transform:translateZ(-50px);
+}
+.in_left{
+    transform:rotateY(90deg) translateZ(50px);
+}
+.in_right{
+    transform: rotateY(-90deg) translateZ(50px);
+}
+.in_top{
+    transform:rotateX(90deg) translateZ(50px);
+}
+.in_bottom{
+    transform: rotateX(-90deg) translateZ(50px);
+}
+#react:hover .out_frount{
+    transform:translateZ(200px);
+}
+#react:hover .out_back{
+    transform:translateZ(-200px);
+}
+#react:hover .out_left{
+    transform:rotateY(90deg) translateZ(200px);
+}
+#react:hover .out_right{
+    transform: rotateY(-90deg) translateZ(200px);
+}
+#react:hover .out_top{
+    transform:rotateX(90deg) translateZ(200px);
+}
+#react:hover .out_bottom{
+    transform: rotateX(-90deg) translateZ(200px);
+}
+@charset "utf-8";
+/* CSS Document */</style>
+<body>
+<div id="react">
+    <div class="out_frount">
+        
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact5mptpaj31090prn2s.jpg" class="out_pic">
+    </div>
+    <div class="out_back">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact59rdxcj32822as1kx.jpg" class="out_pic">
+    </div>
+    <div class="out_left">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact3ljypsj30ii0hy77k.jpg" class="out_pic">
+    </div>
+    <div class="out_right">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact5y7gpsj34bx3s0npf.jpg" class="out_pic">
+    </div>
+    <div class="out_top">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gacy24w26bj32bc2bcx6r.jpg" class="out_pic">
+    </div>
+    <div class="out_bottom">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact81rsipj316q1560zu.jpg" class="out_pic">
+    </div>
+    <span class="in_frount">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact5mptpaj31090prn2s.jpg" class="in_pic">
+    </span>
+    <span class="in_back">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact8oub8fj31f81l6b29.jpg" class="in_pic">
+    </span>
+    <span class="in_left">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact81rsipj316q1560zu.jpg" class="in_pic">
+    </span>
+    <span class="in_right">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gacy3z7djbj31ed1i1ak5.jpg" class="in_pic">
+    </span>
+    <span class="in_top">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact9kdk2aj31o01hcgqo.jpg" class="in_pic">
+    </span>
+    <span class="in_bottom">
+        <img src="http://ww1.sinaimg.cn/large/006nB4gFly1gact90xxr8j32a52c7x6p.jpg" class="in_pic">
+    </span>
+</div>
+<script>
+    var react= document.getElementById("react");
+for (var i = 0; i < 36; i++) {
+var oDiv = document.createElement("div");
+oDiv.className = "rib";
+// 画36条心形曲线
+oDiv.style.transform = "rotateY(" + 10 * i + "deg) rotateZ(45deg) translateX(30px)";
+var n = 0;
+setInterval(function() {
+if (n < 36) {
+ document.getElementsByClassName('rib')[n].style.borderColor = getRandomColor();
+ n = n + 1;
+} else {
+ n = 0;
+}
+},1000)
+console.log(n)
+react.appendChild(oDiv);
+}
+
+// 随机色
+var getRandomColor = function(){    
+return  '#' +    
+(function(color){    
+return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)])    
+&& (color.length == 6) ?  color : arguments.callee(color);    
+})('');    
+} 
+</script>
+</body>
+</html>
